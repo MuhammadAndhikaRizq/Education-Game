@@ -16,6 +16,18 @@ public class UI : MonoBehaviour
         uiEnabled.SetActive(true);
     }
 
+    public void ActiveCharater(GameObject character)
+    {
+        character.SetActive(true); 
+    
+    }
+
+    public void DeactiveCharater(GameObject character)
+    {
+        character.SetActive(false); 
+    
+    }
+
     public void QuitButton()
     {
         Application.Quit();
