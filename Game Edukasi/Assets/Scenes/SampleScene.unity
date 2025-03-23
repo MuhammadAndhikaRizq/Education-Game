@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 172710693}
   - component: {fileID: 172710692}
   m_Layer: 5
-  m_Name: Doni
+  m_Name: D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,7 +1289,7 @@ GameObject:
   - component: {fileID: 705664583}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: DropArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1397,7 +1397,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.028627634, y: 0.03271702}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1408,7 +1408,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.05, y: 1.65}
+  m_Size: {x: 2.3035574, y: 1.8790205}
   m_EdgeRadius: 0
 --- !u!1 &737593914
 GameObject:
@@ -1910,7 +1910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1063527203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2197,7 +2197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.4999657, y: 27.5}
+  m_AnchoredPosition: {x: 4.4999695, y: 27.5}
   m_SizeDelta: {x: 1461.0002, y: 1025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1199498164
@@ -2606,7 +2606,7 @@ GameObject:
   - component: {fileID: 1320172150}
   - component: {fileID: 1320172149}
   m_Layer: 5
-  m_Name: Doni
+  m_Name: D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3918,7 +3918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1746176236
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4374,7 +4374,7 @@ GameObject:
   - component: {fileID: 2127892885}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: DropArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4430,7 +4430,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.058412135, y: -0.01347971}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4441,7 +4441,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.05, y: 1.65}
+  m_Size: {x: 2.2926354, y: 2.1802049}
   m_EdgeRadius: 0
 --- !u!212 &2127892886
 SpriteRenderer:
