@@ -1759,6 +1759,7 @@ GameObject:
   - component: {fileID: 1059107797}
   - component: {fileID: 1059107796}
   - component: {fileID: 1059107795}
+  - component: {fileID: 1059107798}
   m_Layer: 5
   m_Name: Toy 3
   m_TagString: Untagged
@@ -1895,6 +1896,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1059107798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059107793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32def326ded8e0d4e8fc6a718fc7e86d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1063527202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,6 +2187,7 @@ GameObject:
   - component: {fileID: 1199498164}
   - component: {fileID: 1199498165}
   - component: {fileID: 1199498166}
+  - component: {fileID: 1199498167}
   m_Layer: 5
   m_Name: Toy 2
   m_TagString: Untagged
@@ -2310,6 +2324,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1908264, y: 4.11296}
   m_EdgeRadius: 0
+--- !u!114 &1199498167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199498162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32def326ded8e0d4e8fc6a718fc7e86d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1209869854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,7 +3113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032b268446ae65447939ead8de23a49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiElements: []
 --- !u!1 &1622613841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,6 +3676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1691735053}
+  - component: {fileID: 1691735054}
   m_Layer: 5
   m_Name: Toys
   m_TagString: Untagged
@@ -3680,6 +3706,18 @@ RectTransform:
   m_AnchoredPosition: {x: -23, y: -258.5}
   m_SizeDelta: {x: 458.99994, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1691735054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691735052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32def326ded8e0d4e8fc6a718fc7e86d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692627703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,6 +3730,7 @@ GameObject:
   - component: {fileID: 1692627707}
   - component: {fileID: 1692627706}
   - component: {fileID: 1692627705}
+  - component: {fileID: 1692627708}
   m_Layer: 5
   m_Name: Toy 1
   m_TagString: Untagged
@@ -3828,6 +3867,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1692627708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692627703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32def326ded8e0d4e8fc6a718fc7e86d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1734816403
 GameObject:
   m_ObjectHideFlags: 0
@@ -4317,6 +4368,18 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 413573769}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1525425135}
+        m_TargetAssemblyTypeName: ResetObject, Assembly-CSharp
+        m_MethodName: ResetPosition
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1691735052}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
