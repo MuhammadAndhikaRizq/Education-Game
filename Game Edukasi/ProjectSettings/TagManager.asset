@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DropArea
   - ResetAble
+  - Toys
   layers:
   - Default
   - TransparentFX
