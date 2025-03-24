@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class ResetManager : MonoBehaviour
 {
-    private Vector3 startPosition;
-
-    void Start()
+   public void ResetAllDraggableObjects()
     {
-        // Store the initial position and active state
-        startPosition = transform.position;
-    }
-
-    public void ResetMenuUI()
-    {
-        // Reset position
-        transform.position = startPosition;
-
-        // Reset visibility
-        // menuPanel.SetActive(startActive);
+        DragAndDrop[] draggableObjects = FindObjectsOfType<DragAndDrop>();
+        foreach (var obj in draggableObjects)
+        {
+            obj.ResetPosition();
+        }
     }
 }
