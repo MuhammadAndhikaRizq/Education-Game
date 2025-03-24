@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class WinCondition : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> toys;
+    [SerializeField] private List<GameObject> toys; // Daftar mainan yang harus masuk
     [SerializeField] private GameObject winUI;
     [SerializeField] private string toysTag = "Toys";
 
+    private HashSet<GameObject> placedToys = new HashSet<GameObject>(); // Menyimpan mainan yang sudah masuk
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag(toysTag))
+        if (other.CompareTag(toysTag) && !placedToys.Contains(other.gameObject))
         {
-            List<GameObject> newToys = new List<GameObject>();
+            placedToys.Add(other.gameObject);
 
-            foreach (GameObject toy in toys)
+            if (placedToys.Count == toys.Count) // Jika semua mainan sudah masuk
             {
-                newToys.Add(toy);
-                if(newToys.Count == 3)
-                    winUI.SetActive(true);
+                winUI.SetActive(true);
             }
         }
     }
+
+    // void OnTriggerExit2D(Collider2D other) // Jika mainan keluar dari area, hapus dari daftar
+    // {
+    //     if (other.CompareTag(toysTag) && placedToys.Contains(other.gameObject))
+    //     {
+    //         placedToys.Remove(other.gameObject);
+    //         winUI.SetActive(false); // Jika ada yang keluar, jangan tampilkan win UI
+    //     }
+    // }
 }
