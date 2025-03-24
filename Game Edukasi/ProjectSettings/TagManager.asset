@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DropArea
+  - ResetAble
   layers:
   - Default
   - TransparentFX
@@ -42,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 2d
+  - name: Items
     uniqueID: 3249917799
+    locked: 0
+  - name: Humans
+    uniqueID: 3436593173
     locked: 0
