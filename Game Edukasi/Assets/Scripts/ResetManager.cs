@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class ResetManager : MonoBehaviour
 {
-    private Dictionary<GameObject, Vector3> startPositions = new Dictionary<GameObject, Vector3>();
+    private Vector3 startPosition;
 
     void Start()
     {
-        // Find all objects with the "Resettable" tag and store their positions
-        GameObject[] resettableObjects = GameObject.FindGameObjectsWithTag("ResetAble");
-
-        foreach (GameObject obj in resettableObjects)
-        {
-            startPositions[obj] = obj.transform.position; // ✅ Stores the correct object's position
-        }
+        // Store the initial position and active state
+        startPosition = transform.position;
     }
 
-    public void ResetObjects()
+    public void ResetMenuUI()
     {
-        foreach (var obj in startPositions)
-        {
-            if (obj.Key != null) // Check if the object still exists
-            {
-                obj.Key.transform.position = obj.Value; // ✅ Reset to stored position
-            }
-        }
+        // Reset position
+        transform.position = startPosition;
+
+        // Reset visibility
+        // menuPanel.SetActive(startActive);
     }
 }
