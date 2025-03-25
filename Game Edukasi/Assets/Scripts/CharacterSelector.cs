@@ -5,17 +5,22 @@ public class CharacterSelector : MonoBehaviour
     [Header("Character")]
     public GameObject boy;
     public GameObject girl;
-
-    private ActiveCondition boyActive;
-    private ActiveCondition girlActive;
-
      public ActiveCondition characterManager;
 
-    private void Awake()
+    private void Start()
     {
-        // Simpan referensi komponen ActiveCondition saat game dimulai
-        boyActive = boy.GetComponent<ActiveCondition>();
-        girlActive = girl.GetComponent<ActiveCondition>();
+        string selectedCharacter = PlayerPrefs.GetString("SelectedCharacter", "Boy");
+
+        if (selectedCharacter == "Boy")
+        {
+            characterManager.BoyActive(true);
+            characterManager.GirlActive(false);
+        }
+        else
+        {
+            characterManager.BoyActive(false);
+            characterManager.GirlActive(true);
+        }
     }
 
     public void SelectBoy()
