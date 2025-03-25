@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UI : MonoBehaviour
 {
+    
     [SerializeField] private GameObject[] uiElements;
 
     public void SwitchTo(GameObject uiEnabled)
