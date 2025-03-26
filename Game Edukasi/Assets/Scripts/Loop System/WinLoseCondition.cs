@@ -23,12 +23,14 @@ public class WinLoseCondition : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D other) // Jika mainan keluar dari area, hapus dari daftar
-    {
-        if (other.CompareTag(toysTag) && placedToys.Contains(other.gameObject))
-        {
-            placedToys.Remove(other.gameObject);
-            winLoseUI.SetActive(false); // Jika ada yang keluar, jangan tampilkan win UI
-        }
-    }
+    // void OnTriggerExit2D(Collider2D other) // Jika mainan keluar dari area, hapus dari daftar
+    // {
+    //     if (other.CompareTag(toysTag) && placedToys.Contains(other.gameObject))
+    //     {
+    //         placedToys.Remove(other.gameObject);
+    //         winLoseUI.SetActive(false); // Jika ada yang keluar, jangan tampilkan win UI
+    //     }
+    // }
+
+    
 }
