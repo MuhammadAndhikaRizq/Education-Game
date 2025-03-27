@@ -27,7 +27,7 @@ public class ButtonActivetedCondition : MonoBehaviour
 
     IEnumerator ActiveWinUI()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         raiseHand.SetActive(false);
         winUI.SetActive(true);
 
