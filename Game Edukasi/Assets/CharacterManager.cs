@@ -17,7 +17,7 @@ public class CharacterManager : MonoBehaviour
         PrefabUtility.SaveAsPrefabAsset(playerChar, "Assets/Prefabs/Character.prefab");
     }
 
-     public void SelectedCharacterGirl()
+    public void SelectedCharacterGirl()
     {
         selectedChar = 1;
         sr.sprite = character[selectedChar];
