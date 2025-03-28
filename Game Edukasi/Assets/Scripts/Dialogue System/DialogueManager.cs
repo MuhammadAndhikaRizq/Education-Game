@@ -6,6 +6,7 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text dialogueText;
+    public GameObject winUI;
     private Queue<string> sentences;
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        Debug.Log("end");
+        winUI.SetActive(true);
     }
 
     

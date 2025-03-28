@@ -25,9 +25,9 @@ public class ButtonActivetedCondition : MonoBehaviour
         StartCoroutine(ActiveWinUI());
     }
 
-    IEnumerator ActiveWinUI()
+    public IEnumerator ActiveWinUI()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         raiseHand.SetActive(false);
         winUI.SetActive(true);
 
