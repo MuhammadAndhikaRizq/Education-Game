@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2806840329608101343}
   - component: {fileID: 2082369078258489997}
+  - component: {fileID: 5638094199338821549}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -88,3 +89,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5638094199338821549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9141786100434779795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aaf5601bf871c4a9f34acaad98f75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - 
+    - Halo teman-teman, hari ini aku mau bercerita tentang hewan kesukaanku! Aku
+      sangat suka kucing karena mereka lucu dan suka bermain.
+    - 'Kemarin, aku menggambar Momo di buku gambarku. Aku mewarnainya dengan crayon
+      supaya terlihat lebih nyata. '
+    - Saat aku tunjukkan ke ibu guru, beliau bilang gambarku bagus!
+    - Aku juga membaca buku tentang kucing di perpustakaan sekolah. Ternyata, kucing
+      bisa melihat dalam gelap dan sangat suka tidur lama. Wah, seru sekali belajar
+      tentang hewan kesukaanku!
+    - Teman-teman, kalian juga punya hewan kesukaan? Yuk, ceritakan padaku!
