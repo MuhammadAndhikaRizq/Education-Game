@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        winUI.SetActive(true);
+        FindObjectOfType<ButtonActivetedCondition>().ActivateWinUI4();
     }
 
     

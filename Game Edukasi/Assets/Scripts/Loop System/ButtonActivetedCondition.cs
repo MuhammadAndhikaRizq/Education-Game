@@ -4,7 +4,11 @@ using UnityEngine;
 public class ButtonActivetedCondition : MonoBehaviour
 {
     public GameObject raiseHand;
-    public GameObject winUI;
+    public GameObject winUIStage3;
+    [Space]
+    [Header("Stage 4")]
+    public GameObject winUIStage4;
+    public GameObject spriteStage4;
     public Transform target;
     public float speed = 5;
 
@@ -29,7 +33,13 @@ public class ButtonActivetedCondition : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         raiseHand.SetActive(false);
-        winUI.SetActive(true);
+        winUIStage3.SetActive(true);
 
+    }
+
+    public void ActivateWinUI4()
+    {
+        spriteStage4.SetActive(false);
+        winUIStage4.SetActive(true);
     }
 }
