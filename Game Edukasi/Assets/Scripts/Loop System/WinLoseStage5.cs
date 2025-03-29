@@ -18,16 +18,28 @@ public class WinLoseStage5 : MonoBehaviour
     {
         if (other.CompareTag(powerTag))
         {
-            winUI.SetActive(true);
+            StartCoroutine(ActiveWinUI());
             fire.SetActive(true);
             power.SetActive(false);
         }
 
         if (other.CompareTag(posionTag))
         {
-            loseUI.SetActive(true);
+            StartCoroutine(ActiveLoseUI());
             explode.SetActive(true);
             poison.SetActive(false);
         }
+    }
+
+    IEnumerator ActiveWinUI()
+    {
+        yield return new WaitForSeconds(2);
+        winUI.SetActive(true);
+    }
+
+    IEnumerator ActiveLoseUI()
+    {
+        yield return new WaitForSeconds(2);
+        loseUI.SetActive(true);
     }
 }
