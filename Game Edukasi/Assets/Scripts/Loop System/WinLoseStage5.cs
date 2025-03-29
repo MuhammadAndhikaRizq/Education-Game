@@ -44,4 +44,6 @@ public class WinLoseStage5 : MonoBehaviour
         loseUI.SetActive(true);
         explode.SetActive(false);
     }
+
+   
 }

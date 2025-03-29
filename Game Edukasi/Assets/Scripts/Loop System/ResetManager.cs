@@ -20,9 +20,9 @@ public class ResetManager : MonoBehaviour
         gameObject.SetActive(false);
 
     }
-    public void ActiveUI(GameObject gameObject)
-    {
-        gameObject.SetActive(true);
+    // public void ActiveUI(GameObject gameObject)
+    // {
+    //     gameObject.SetActive(true);
 
-    }
+    // }
 }
