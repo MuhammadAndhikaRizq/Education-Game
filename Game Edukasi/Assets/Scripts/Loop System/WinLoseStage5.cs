@@ -35,11 +35,13 @@ public class WinLoseStage5 : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         winUI.SetActive(true);
+        fire.SetActive(false);
     }
 
     IEnumerator ActiveLoseUI()
     {
         yield return new WaitForSeconds(2);
         loseUI.SetActive(true);
+        explode.SetActive(false);
     }
 }
