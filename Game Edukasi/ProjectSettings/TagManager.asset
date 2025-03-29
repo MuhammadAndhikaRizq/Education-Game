@@ -7,6 +7,9 @@ TagManager:
   - DropArea
   - ResetAble
   - Toys
+  - FxTemporaire
+  - Power
+  - Poison
   layers:
   - Default
   - TransparentFX

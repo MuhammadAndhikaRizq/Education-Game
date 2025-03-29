@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class WinLoseCondition : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> toys; // Daftar mainan yang harus masuk
-    [SerializeField] private GameObject winLoseUI;
-    [SerializeField] private string toysTag = "Toys";
+    [SerializeField] protected List<GameObject> items; // Daftar mainan yang harus masuk
+    [SerializeField] protected GameObject winLoseUI;
+    [SerializeField] protected string toysTag = "Toys";
 
-    private HashSet<GameObject> placedToys = new HashSet<GameObject>(); // Menyimpan mainan yang sudah masuk
+    protected HashSet<GameObject> placedToys = new HashSet<GameObject>(); // Menyimpan mainan yang sudah masuk
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(toysTag) && !placedToys.Contains(other.gameObject))
         {
             placedToys.Add(other.gameObject);
 
-            if (placedToys.Count == toys.Count) // Jika semua mainan sudah masuk
+            if (placedToys.Count == items.Count) // Jika semua mainan sudah masuk
             {
                 winLoseUI.SetActive(true);
             }
