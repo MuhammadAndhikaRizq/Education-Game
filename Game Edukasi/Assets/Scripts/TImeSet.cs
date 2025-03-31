@@ -58,7 +58,7 @@ public class TImeSet : MonoBehaviour
     {
         if (hours == 5 && minutes == 0)
         {
-            sleepUI.SetActive(false);
+            
             loseUI.SetActive(true);
         }
         else
@@ -80,7 +80,7 @@ public class TImeSet : MonoBehaviour
         hours = 4;
         minutes = 50;
         UpdateTimeText();
-        sleepUI.SetActive(true);
+
     }
 
 }
