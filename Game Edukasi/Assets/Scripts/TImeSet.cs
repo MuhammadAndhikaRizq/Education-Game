@@ -11,41 +11,58 @@ public class TImeSet : MonoBehaviour
     public GameObject sleepUI;
     public GameObject winUI;
     public GameObject loseUI;
+
     private float timer = 0f;
     private int hours = 4, minutes = 50;
+    private bool isRunning = false; 
 
-    void Update()
+    void OnEnable()
     {
-        timer += Time.deltaTime;
+        isRunning = true;
+        StartCoroutine(TimeUpdater());
+    }
 
-        if(timer >= 1f)
+    void OnDisable()
+    {
+        isRunning = false;
+    }
+
+    IEnumerator TimeUpdater()
+    {
+        while (isRunning)
         {
-            timer = 0f;
+            yield return new WaitForSeconds(1f);
             minutes++;
 
-            if(minutes >= 60f)
+            if (minutes >= 60)
             {
                 minutes = 0;
                 hours++;
             }
 
-            UpdateTimeNext();
+            UpdateTimeText();
+
+            if (hours == 5 && minutes == 0)
+            {
+                DisplayCharacter();
+            }
         }
     }
 
-    void UpdateTimeNext()
+    void UpdateTimeText()
     {
         timeText.text = $"{hours:D2}:{minutes:D2}";
     }
 
     public void DisplayCharacter()
     {
-        if(hours == 5 && minutes == 0)
+        if (hours == 5 && minutes == 0)
         {
             sleepUI.SetActive(false);
             loseUI.SetActive(true);
-        }  
-        else{
+        }
+        else
+        {
             player.SetActive(true);
             sleepUI.SetActive(false);
             StartCoroutine(DisplayWin());
@@ -56,6 +73,14 @@ public class TImeSet : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         winUI.SetActive(true);
+    }
+
+    public void ResetTimer()
+    {
+        hours = 4;
+        minutes = 50;
+        UpdateTimeText();
+        sleepUI.SetActive(true);
     }
 
 }
