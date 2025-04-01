@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
-    private Vector3 startPosition;
-    private Vector3 offset;
-    private Collider2D collider2d;
-    public string destinationTag = "DropArea";
-    private bool isDragging = false;
+    protected Vector3 startPosition;
+    protected Vector3 offset;
+    protected Collider2D collider2d;
+    protected string destinationTag = "DropArea";
+    protected bool isDragging = false;
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class DragAndDrop : MonoBehaviour
         startPosition = transform.position;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Mouse Click (PC)
         {
@@ -50,7 +50,7 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    private void CheckTouchOrClick(Vector3 inputPosition)
+    protected virtual void CheckTouchOrClick(Vector3 inputPosition)
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(inputPosition), Vector2.zero);
         if (hit.collider != null && hit.collider.gameObject == gameObject)
@@ -60,7 +60,7 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    private void DropObject()
+    protected virtual void DropObject()
     {
         isDragging = false;
         collider2d.enabled = false;
@@ -74,7 +74,7 @@ public class DragAndDrop : MonoBehaviour
         collider2d.enabled = true;
     }
 
-    private Vector3 MouseWorldPosition(Vector3 inputPosition)
+    protected virtual Vector3 MouseWorldPosition(Vector3 inputPosition)
     {
         inputPosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
         return Camera.main.ScreenToWorldPoint(inputPosition);
@@ -84,4 +84,5 @@ public class DragAndDrop : MonoBehaviour
     {
         transform.position = startPosition;
     }
+
 }
