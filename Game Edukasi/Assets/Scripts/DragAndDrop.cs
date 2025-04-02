@@ -19,6 +19,11 @@ public class DragAndDrop : MonoBehaviour
 
     protected virtual void Update()
     {
+        InputSystem();
+    }
+
+    protected virtual void InputSystem()
+    {
         if (Input.GetMouseButtonDown(0)) // Mouse Click (PC)
         {
             CheckTouchOrClick(Input.mousePosition);

@@ -8611,10 +8611,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 992862405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163edb014990fc447b68a80dd5149f1f, type: 3}
+  m_Script: {fileID: 11500000, guid: c246ab15daf17c248ab902c93608516b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
+  animator: {fileID: 992862407}
+  isPlay: 0
 --- !u!1001 &996856093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9307,7 +9308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163edb014990fc447b68a80dd5149f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
 --- !u!212 &1059107797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11275,7 +11275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163edb014990fc447b68a80dd5149f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
 --- !u!50 &1196896083
 Rigidbody2D:
   serializedVersion: 4
@@ -11541,7 +11540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163edb014990fc447b68a80dd5149f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
 --- !u!61 &1199498166
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11849,7 +11847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163edb014990fc447b68a80dd5149f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
 --- !u!50 &1202409040
 Rigidbody2D:
   serializedVersion: 4
@@ -16821,7 +16818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163edb014990fc447b68a80dd5149f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
 --- !u!212 &1692627707
 SpriteRenderer:
   m_ObjectHideFlags: 0
