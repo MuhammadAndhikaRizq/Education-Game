@@ -1,18 +1,21 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WinLoseStage7 : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> trashs;
+    public List<GameObject> trashs;
     [SerializeField] private GameObject winUI;
-    [SerializeField] private string broomTag = "Broom";
-    
-    public void OnTriggerEnter2D(Collider2D other)
+
+    public void WinCondition()
     {
-        if(other.CompareTag(broomTag))
+        trashs.RemoveAll(item => item == null);
+        if (trashs.Count == 0)
         {
-            DestroyImmediate(other.gameObject);
+            winUI.SetActive(true);
         }
     }
+
+   
 
 }

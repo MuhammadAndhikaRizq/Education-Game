@@ -10,6 +10,7 @@ TagManager:
   - FxTemporaire
   - Power
   - Poison
+  - Broom
   layers:
   - Default
   - TransparentFX
