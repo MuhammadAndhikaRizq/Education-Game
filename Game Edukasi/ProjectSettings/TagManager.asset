@@ -11,6 +11,7 @@ TagManager:
   - Power
   - Poison
   - Broom
+  - Bag
   layers:
   - Default
   - TransparentFX

@@ -7,9 +7,14 @@ public class WinLoseStage8 : MonoBehaviour
     public List<GameObject> insideBag;
     public GameObject winUI;
 
+    public void Update()
+    {
+        WindCondition();
+    }
+
     public void WindCondition()
     {
-        if (insideBag.Count == 6)
+        if (insideBag.Count == 7)
         {
             winUI.SetActive(true);
         }
