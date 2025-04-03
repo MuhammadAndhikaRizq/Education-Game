@@ -15,6 +15,7 @@ public class ButtonActivetedCondition : MonoBehaviour
 
     public void ButtonActiveWin(GameObject gameObject)
     {
+        AudioManager.Instance.PlayEventSound();
         gameObject.SetActive(true);
     }
 
@@ -27,6 +28,7 @@ public class ButtonActivetedCondition : MonoBehaviour
     public void BuutonRaiseHand()
     {
         raiseHand.transform.localPosition = Vector3.Lerp(raiseHand.transform.position, target.position, Time.deltaTime * speed);
+        AudioManager.Instance.PlayEventSound();
         StartCoroutine(ActiveWinUI());
     }
 

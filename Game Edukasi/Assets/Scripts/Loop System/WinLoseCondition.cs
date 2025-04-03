@@ -18,6 +18,7 @@ public class WinLoseCondition : MonoBehaviour
 
             if (placedToys.Count == items.Count) // Jika semua mainan sudah masuk
             {
+                AudioManager.Instance.PlayEventSound();
                 winLoseUI.SetActive(true);
             }
         }

@@ -16,6 +16,7 @@ public class WinLoseStage8 : MonoBehaviour
     {
         if (insideBag.Count == 7)
         {
+            AudioManager.Instance.PlayEventSound();
             winUI.SetActive(true);
         }
     }

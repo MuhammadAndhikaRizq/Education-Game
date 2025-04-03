@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        AudioManager.Instance.PlayEventSound();
         FindObjectOfType<ButtonActivetedCondition>().ActivateWinUI4();
     }
 

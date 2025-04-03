@@ -36,6 +36,7 @@ public class WinLoseStage5 : MonoBehaviour
     IEnumerator ActiveWinUI()
     {
         yield return new WaitForSeconds(2);
+        AudioManager.Instance.PlayEventSound();
         winUI.SetActive(true);
         fire.SetActive(false);
     }

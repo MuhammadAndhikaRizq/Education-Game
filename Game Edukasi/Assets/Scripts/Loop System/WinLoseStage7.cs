@@ -12,6 +12,7 @@ public class WinLoseStage7 : MonoBehaviour
         trashs.RemoveAll(item => item == null);
         if (trashs.Count == 0)
         {
+            AudioManager.Instance.PlayEventSound();
             winUI.SetActive(true);
         }
     }

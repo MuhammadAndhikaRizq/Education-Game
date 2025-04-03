@@ -73,6 +73,7 @@ public class TImeSet : MonoBehaviour
     IEnumerator DisplayWin()
     {
         yield return new WaitForSeconds(2);
+        AudioManager.Instance.PlayEventSound();
         winUI.SetActive(true);
     }
 
