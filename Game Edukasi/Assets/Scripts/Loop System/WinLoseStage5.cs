@@ -14,10 +14,11 @@ public class WinLoseStage5 : MonoBehaviour
     [SerializeField] private string posionTag = "Poison";
     [SerializeField] private string powerTag = "Power";
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(powerTag))
         {
+            poison.SetActive(false);
             StartCoroutine(ActiveWinUI());
             fire.SetActive(true);
             power.SetActive(false);
@@ -25,6 +26,7 @@ public class WinLoseStage5 : MonoBehaviour
 
         if (other.CompareTag(posionTag))
         {
+            power.SetActive(false);
             StartCoroutine(ActiveLoseUI());
             explode.SetActive(true);
             poison.SetActive(false);

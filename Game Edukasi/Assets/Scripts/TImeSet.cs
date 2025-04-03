@@ -12,7 +12,7 @@ public class TImeSet : MonoBehaviour
     public GameObject winUI;
     public GameObject loseUI;
 
-    private float timer = 0f;
+    
     private int hours = 4, minutes = 50;
     private bool isRunning = false; 
 
@@ -65,6 +65,7 @@ public class TImeSet : MonoBehaviour
         {
             player.SetActive(true);
             sleepUI.SetActive(false);
+            isRunning = false;
             StartCoroutine(DisplayWin());
         }
     }
