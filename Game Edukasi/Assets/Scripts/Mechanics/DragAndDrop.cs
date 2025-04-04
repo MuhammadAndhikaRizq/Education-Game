@@ -77,6 +77,7 @@ public class DragAndDrop : MonoBehaviour
         }
 
         collider2d.enabled = true;
+        
     }
 
     protected virtual Vector3 MouseWorldPosition(Vector3 inputPosition)

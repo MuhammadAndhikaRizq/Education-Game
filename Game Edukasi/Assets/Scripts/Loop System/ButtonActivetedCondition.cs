@@ -22,19 +22,24 @@ public class ButtonActivetedCondition : MonoBehaviour
     public void ButtonActiveLose(GameObject gameObject)
     {
         gameObject.SetActive(true);
+    }
+
+    public void ButtonActiveLoseStage4(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
         spriteStage4.SetActive(false);
     }
 
     public void BuutonRaiseHand()
     {
         raiseHand.transform.localPosition = Vector3.Lerp(raiseHand.transform.position, target.position, Time.deltaTime * speed);
-        AudioManager.Instance.PlayEventSound();
         StartCoroutine(ActiveWinUI());
     }
 
     public IEnumerator ActiveWinUI()
     {
         yield return new WaitForSeconds(1);
+        AudioManager.Instance.PlayEventSound();
         raiseHand.SetActive(false);
         winUIStage3.SetActive(true);
 

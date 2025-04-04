@@ -12,6 +12,7 @@ TagManager:
   - Poison
   - Broom
   - Bag
+  - Win
   layers:
   - Default
   - TransparentFX

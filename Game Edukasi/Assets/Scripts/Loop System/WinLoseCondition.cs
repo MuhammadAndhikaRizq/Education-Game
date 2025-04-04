@@ -7,6 +7,7 @@ public class WinLoseCondition : MonoBehaviour
     [SerializeField] protected List<GameObject> items; // Daftar mainan yang harus masuk
     [SerializeField] protected GameObject winLoseUI;
     [SerializeField] protected string toysTag = "Toys";
+    [SerializeField] protected string uiTag = "Win";
 
     protected HashSet<GameObject> placedToys = new HashSet<GameObject>(); // Menyimpan mainan yang sudah masuk
 
@@ -18,7 +19,11 @@ public class WinLoseCondition : MonoBehaviour
 
             if (placedToys.Count == items.Count) // Jika semua mainan sudah masuk
             {
-                AudioManager.Instance.PlayEventSound();
+                if(winLoseUI.tag == uiTag)
+                {
+                    AudioManager.Instance.PlayEventSound();
+                }
+                
                 winLoseUI.SetActive(true);
             }
         }
