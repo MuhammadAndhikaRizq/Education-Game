@@ -9,10 +9,12 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     public AudioSource backgroundMusicSource;
     public AudioSource eventSoundSource;
+    public AudioSource characterSelectedSource;
 
     [Header("Audio Clips")]
     public AudioClip defaultSound;
     public AudioClip eventSound;
+    public AudioClip characterSelectedSound;
 
     private void Awake()
     {
@@ -47,6 +49,14 @@ public class AudioManager : MonoBehaviour
         if (eventSoundSource != null && eventSound != null)
         {
             eventSoundSource.PlayOneShot(eventSound);
+        }
+    }
+
+    public void PlayCharacterSelectedSound()
+    {
+        if (characterSelectedSource != null && characterSelectedSound != null)
+        {
+            characterSelectedSource.PlayOneShot(characterSelectedSound);
         }
     }
 }
