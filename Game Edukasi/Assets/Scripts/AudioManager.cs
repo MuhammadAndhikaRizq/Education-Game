@@ -5,16 +5,21 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    public UI sceneSwitch;
 
     [Header("Audio Sources")]
     public AudioSource backgroundMusicSource;
     public AudioSource eventSoundSource;
     public AudioSource characterSelectedSource;
+    public AudioSource andhikaSource;
+    public AudioSource jasminSource;
 
     [Header("Audio Clips")]
     public AudioClip defaultSound;
     public AudioClip eventSound;
     public AudioClip characterSelectedSound;
+    public AudioClip andhikaSound;
+    public AudioClip jasminSound;
 
     private void Awake()
     {
@@ -58,5 +63,29 @@ public class AudioManager : MonoBehaviour
         {
             characterSelectedSource.PlayOneShot(characterSelectedSound);
         }
+    }
+
+    public void PlayAndhikaSound(GameObject uiEnabled)
+    {
+        if (andhikaSource != null && andhikaSound != null)
+        {
+            andhikaSource.PlayOneShot(andhikaSound);
+        }
+        StartCoroutine(PlaySoundCharacter(uiEnabled));
+    }
+
+    public void PlayJasminSound(GameObject uiEnabled)
+    {
+        if (jasminSource != null && jasminSound != null)
+        {
+            jasminSource.PlayOneShot(jasminSound);
+        }
+        StartCoroutine(PlaySoundCharacter(uiEnabled));
+    }
+
+    IEnumerator PlaySoundCharacter(GameObject uiEnabled)
+    {
+        yield return new WaitForSeconds(2);
+        sceneSwitch.SwitchTo(uiEnabled);
     }
 }
