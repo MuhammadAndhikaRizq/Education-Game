@@ -21,10 +21,12 @@ public class WinLoseCondition : MonoBehaviour
             {
                 if(winLoseUI.tag == uiTag)
                 {
-                    AudioManager.Instance.PlayEventSound();
+                    AudioManager.Instance.PlayWinStage1Sound();
+                }else{
+                    AudioManager.Instance.PlayLoseStage1Sound();
                 }
                 
-                winLoseUI.SetActive(true);
+                winLoseUI.SetActive(true);   
             }
         }
     }

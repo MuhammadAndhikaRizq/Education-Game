@@ -10,9 +10,17 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     public AudioSource backgroundMusicSource;
     public AudioSource eventSoundSource;
+    public AudioSource winStage1SoundSource;
+    public AudioSource loseStage1SoundSource;
+
+    [Header("Character Selection Audio Sources")]
     public AudioSource characterSelectedSource;
     public AudioSource andhikaSource;
     public AudioSource jasminSource;
+
+    [Header("Stage 1 Audio Sources")]
+    public AudioSource stage1Source;
+    public AudioSource tutorial1Source;
 
     [Header("Audio Clips")]
     public AudioClip defaultSound;
@@ -20,6 +28,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip characterSelectedSound;
     public AudioClip andhikaSound;
     public AudioClip jasminSound;
+    
+    [Header("Audio Clips Stage 1")]
+    public AudioClip stageSound;
+    public AudioClip tutorialSound;
+    public AudioClip winStage1Sound;
+    public AudioClip loseStage1Sound;
+    
 
     private void Awake()
     {
@@ -83,9 +98,44 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(PlaySoundCharacter(uiEnabled));
     }
 
+    public void PlayStage1Sound()
+    {
+        if (stage1Source != null && stageSound != null)
+        {
+            stage1Source.PlayOneShot(stageSound);
+        }
+    }
+
+    public void PlayTutorialSound()
+    {
+        if (tutorial1Source != null && tutorialSound != null)
+        {
+            tutorial1Source.PlayOneShot(tutorialSound);
+        }
+    }
+
+    public void PlayWinStage1Sound()
+    {
+        if (winStage1SoundSource != null && winStage1Sound != null)
+        {
+            winStage1SoundSource.PlayOneShot(winStage1Sound);
+        }
+    }
+
+    public void PlayLoseStage1Sound()
+    {
+        if (loseStage1SoundSource != null && loseStage1Sound != null)
+        {
+            loseStage1SoundSource.PlayOneShot(loseStage1Sound);
+        }
+    }
+
     IEnumerator PlaySoundCharacter(GameObject uiEnabled)
     {
         yield return new WaitForSeconds(2);
         sceneSwitch.SwitchTo(uiEnabled);
+        PlayStage1Sound();
+        yield return new WaitForSeconds(3);
+        PlayTutorialSound();
     }
 }
