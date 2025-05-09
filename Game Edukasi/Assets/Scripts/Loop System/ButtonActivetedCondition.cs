@@ -39,6 +39,11 @@ public class ButtonActivetedCondition : MonoBehaviour
         StartCoroutine(NextStage(gameObject));
     }
 
+    public void ButtonActiveLoseStage3(GameObject gameObject)
+    {   
+        StartCoroutine(NextStage(gameObject));
+    }
+
     IEnumerator NextStage(GameObject gameObject)
     {
         yield return new WaitForSeconds(2);
@@ -60,6 +65,13 @@ public class ButtonActivetedCondition : MonoBehaviour
 
     public void BuutonRaiseHand()
     {
+        if(spriteRenderer.sprite.name == "1")
+        {
+            AudioManager.Instance.PlayBoyWinStage3();
+        }else{
+            AudioManager.Instance.PlayGirlWinStage3();
+        }
+
         raiseHand.transform.localPosition = Vector3.Lerp(raiseHand.transform.position, target.position, Time.deltaTime * speed);
         StartCoroutine(ActiveWinUI());
     }
@@ -68,6 +80,7 @@ public class ButtonActivetedCondition : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         AudioManager.Instance.PlayEventSound();
+        AudioManager.Instance.PlayWinStage1Sound();
         raiseHand.SetActive(false);
         winUIStage3.SetActive(true);
 

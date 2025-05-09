@@ -29,6 +29,13 @@ public class AudioManager : MonoBehaviour
     public AudioSource boyLoseSource;
     public AudioSource girlLoseSource;
 
+    [Header("Stage 3 Audio Sources")]
+    public AudioSource stage3Source;
+    public AudioSource teacherSource;
+    public AudioSource boyWinStage3Source;
+    public AudioSource girlWinStage3Source;
+
+
     [Header("Audio Clips")]
     public AudioClip defaultSound;
     public AudioClip eventSound;
@@ -49,6 +56,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip girlWinSound;
     public AudioClip boyLoseSound;
     public AudioClip girlLoseSound;
+
+    [Header("Audio clips Stage 3")]
+    public AudioClip stage3Sound;
+    public AudioClip teacherSound;
+    public AudioClip boyWinStage3Sound;
+    public AudioClip girlWinStage3Sound;
     
 
     private void Awake()
@@ -211,6 +224,48 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
+    #region Stage 3
+    public void PlayStage3Sound()
+    {
+        if (stage3Source != null && stage3Sound != null)
+        {
+            stage3Source.PlayOneShot(stage3Sound);
+        }
+
+        StartCoroutine(Stage3Dialogue());
+    }
+
+    public void PlayTeacherSound()
+    {
+        if (teacherSource != null && teacherSound != null)
+        {
+            teacherSource.PlayOneShot(teacherSound);
+        }
+    }
+
+    public void PlayBoyWinStage3()
+    {
+        if (boyWinStage3Source != null && boyWinStage3Sound != null)
+        {
+            boyWinStage3Source.PlayOneShot(boyWinStage3Sound);
+        }
+    }
+
+    public void PlayGirlWinStage3()
+    {
+        if (girlWinStage3Source != null && girlWinStage3Sound != null)
+        {
+            girlWinStage3Source.PlayOneShot(girlWinStage3Sound);
+        }
+    }
+
+    #endregion
+
+    IEnumerator Stage3Dialogue()
+    {
+        yield return new WaitForSeconds(6);
+        PlayTeacherSound();
+    }
     IEnumerator PlayNPC()
     {
         yield return new WaitForSeconds(4);
