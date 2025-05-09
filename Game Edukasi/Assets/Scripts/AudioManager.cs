@@ -21,6 +21,13 @@ public class AudioManager : MonoBehaviour
     [Header("Stage 1 Audio Sources")]
     public AudioSource stage1Source;
     public AudioSource tutorial1Source;
+    [Header("Stage 2 Audio Sources")]
+    public AudioSource stage2Source;
+    public AudioSource npcSource;
+    public AudioSource boyWinSource;
+    public AudioSource girlWinSource;
+    public AudioSource boyLoseSource;
+    public AudioSource girlLoseSource;
 
     [Header("Audio Clips")]
     public AudioClip defaultSound;
@@ -34,6 +41,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip tutorialSound;
     public AudioClip winStage1Sound;
     public AudioClip loseStage1Sound;
+
+    [Header("Audio Clips Stage 2")]
+    public AudioClip stage2Sound;
+    public AudioClip npcSound;
+    public AudioClip boyWinSound;
+    public AudioClip girlWinSound;
+    public AudioClip boyLoseSound;
+    public AudioClip girlLoseSound;
     
 
     private void Awake()
@@ -54,6 +69,7 @@ public class AudioManager : MonoBehaviour
         PlayDefaultSound();
     }
 
+    #region Warmup Audio
     public void PlayDefaultSound()
     {
         if (backgroundMusicSource != null && defaultSound != null)
@@ -97,7 +113,9 @@ public class AudioManager : MonoBehaviour
         }
         StartCoroutine(PlaySoundCharacter(uiEnabled));
     }
+    #endregion
 
+    #region Stage 1
     public void PlayStage1Sound()
     {
         if (stage1Source != null && stageSound != null)
@@ -138,7 +156,66 @@ public class AudioManager : MonoBehaviour
             loseStage1SoundSource.PlayOneShot(loseStage1Sound);
         }
     }
+    #endregion
 
+    #region Stage 2
+    public void PlayStage2Sound()
+    {
+        if (stage2Source != null && stage2Sound != null)
+        {
+            stage2Source.PlayOneShot(stage2Sound);
+        }
+
+        StartCoroutine(PlayNPC());
+    }
+
+    public void PlayNPCSound()
+    {
+        if (npcSource != null && npcSound != null)
+        {
+            npcSource.PlayOneShot(npcSound);
+        }
+    }
+
+    public void PlayBoyWinSound()
+    {
+        if (boyWinSource != null && boyWinSound != null)
+        {
+            boyWinSource.PlayOneShot(boyWinSound);
+        }
+    }
+
+    public void PlayGirlWinSound()
+    {
+        if (girlWinSource != null && girlWinSound != null)
+        {
+            girlWinSource.PlayOneShot(girlWinSound);
+        }
+    }
+
+    public void PlayBoyLoseSound()
+    {
+        if (boyLoseSource != null && boyLoseSound != null)
+        {
+            boyLoseSource.PlayOneShot(boyLoseSound);
+        }
+    }
+
+    public void PlayGirlLoseSound()
+    {
+        if(girlLoseSource != null && girlLoseSound != null)
+        {
+            girlLoseSource.PlayOneShot(girlLoseSound);
+        }
+    
+    }
+    #endregion
+
+    IEnumerator PlayNPC()
+    {
+        yield return new WaitForSeconds(4);
+        PlayNPCSound();
+    }
     IEnumerator PlaySoundCharacter(GameObject uiEnabled)
     {
         yield return new WaitForSeconds(2);

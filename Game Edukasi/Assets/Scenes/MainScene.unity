@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 15051537}
   m_Layer: 5
   m_Name: Win UI
-  m_TagString: Untagged
+  m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1232,7 +1232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &105364337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7085,6 +7085,12 @@ MonoBehaviour:
   jasminSource: {fileID: 599384747}
   stage1Source: {fileID: 599384752}
   tutorial1Source: {fileID: 599384751}
+  stage2Source: {fileID: 599384747}
+  npcSource: {fileID: 599384747}
+  boyWinSource: {fileID: 599384747}
+  girlWinSource: {fileID: 599384747}
+  boyLoseSource: {fileID: 599384747}
+  girlLoseSource: {fileID: 599384747}
   defaultSound: {fileID: 8300000, guid: 7494517c1c904ae42840ee62b7a8dbc9, type: 3}
   eventSound: {fileID: 8300000, guid: dbfd16d4e0c8b6741a97fd535956f3ec, type: 3}
   characterSelectedSound: {fileID: 8300000, guid: 5376a3a4b8a6ba241acaabe6d6e266b3, type: 3}
@@ -7094,6 +7100,12 @@ MonoBehaviour:
   tutorialSound: {fileID: 8300000, guid: e6e05dd8461b8974582f8c7826ba6b56, type: 3}
   winStage1Sound: {fileID: 8300000, guid: 7f50889162f9007458beff154732e2d7, type: 3}
   loseStage1Sound: {fileID: 8300000, guid: 925c52e3d696c1c47bd25d38476e81a8, type: 3}
+  stage2Sound: {fileID: 8300000, guid: b3d3cda2cef40404fa7865aae58538a7, type: 3}
+  npcSound: {fileID: 8300000, guid: e4bd2416b68350e4aaec835a96acc7de, type: 3}
+  boyWinSound: {fileID: 8300000, guid: 672b9b683a1e72d41b601f5b67ce0100, type: 3}
+  girlWinSound: {fileID: 8300000, guid: 22d4ee7378bf6af4baf8b58ac0f8e501, type: 3}
+  boyLoseSound: {fileID: 8300000, guid: 9bd7311e79c349646be7120378f87a9b, type: 3}
+  girlLoseSound: {fileID: 8300000, guid: 035d0f8ef793ea54f9679c3bfac193ac, type: 3}
 --- !u!4 &599384745
 Transform:
   m_ObjectHideFlags: 0
@@ -8046,7 +8058,7 @@ GameObject:
   - component: {fileID: 640384759}
   m_Layer: 5
   m_Name: Lose UI
-  m_TagString: Untagged
+  m_TagString: Lose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8567,7 +8579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &680489268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16902,6 +16914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raiseHand: {fileID: 501400868}
   winUIStage3: {fileID: 1902730029}
+  spriteRenderer: {fileID: 509779709}
   target: {fileID: 1378755872}
   winUIStage4: {fileID: 81581826}
   spriteStage4: {fileID: 1107937196}
@@ -24343,21 +24356,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterSelector, Assembly-CSharp
-        m_MethodName: SelectBoy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterSelector, Assembly-CSharp
-        m_MethodName: SelectGirl
+      - m_Target: {fileID: 599384744}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayStage2Sound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

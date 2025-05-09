@@ -5,6 +5,8 @@ public class ButtonActivetedCondition : MonoBehaviour
 {
     public GameObject raiseHand;
     public GameObject winUIStage3;
+    public SpriteRenderer spriteRenderer;
+
     public Transform target;
     [Space]
     [Header("Stage 4")]
@@ -15,15 +17,41 @@ public class ButtonActivetedCondition : MonoBehaviour
 
     public void ButtonActiveWin(GameObject gameObject)
     {
-        AudioManager.Instance.PlayEventSound();
-        gameObject.SetActive(true);
+        if(spriteRenderer.sprite.name == "1")
+        {
+            AudioManager.Instance.PlayBoyWinSound();
+        }else{
+            AudioManager.Instance.PlayGirlWinSound();
+        }
+
+        StartCoroutine(NextStage(gameObject));
     }
 
     public void ButtonActiveLose(GameObject gameObject)
     {
-        gameObject.SetActive(true);
+        if(spriteRenderer.sprite.name == "1")
+        {
+            AudioManager.Instance.PlayBoyLoseSound();
+        }else{
+            AudioManager.Instance.PlayGirlLoseSound();
+        }
+        
+        StartCoroutine(NextStage(gameObject));
     }
 
+    IEnumerator NextStage(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(2);
+        if(gameObject.CompareTag("Win"))
+        {
+            AudioManager.Instance.PlayWinStage1Sound();
+            AudioManager.Instance.PlayEventSound();
+        }else{
+            AudioManager.Instance.PlayLoseStage1Sound();
+        }
+        gameObject.SetActive(true);
+
+    }
     public void ButtonActiveLoseStage4(GameObject gameObject)
     {
         gameObject.SetActive(true);

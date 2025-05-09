@@ -22,6 +22,7 @@ public class WinLoseCondition : MonoBehaviour
                 if(winLoseUI.tag == uiTag)
                 {
                     AudioManager.Instance.PlayWinStage1Sound();
+                    AudioManager.Instance.PlayEventSound();
                 }else{
                     AudioManager.Instance.PlayLoseStage1Sound();
                 }

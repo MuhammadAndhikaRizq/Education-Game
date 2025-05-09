@@ -13,6 +13,7 @@ TagManager:
   - Broom
   - Bag
   - Win
+  - Lose
   layers:
   - Default
   - TransparentFX
