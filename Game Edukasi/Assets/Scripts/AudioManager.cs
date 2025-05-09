@@ -110,7 +110,16 @@ public class AudioManager : MonoBehaviour
     {
         if (tutorial1Source != null && tutorialSound != null)
         {
-            tutorial1Source.PlayOneShot(tutorialSound);
+            tutorial1Source.clip = tutorialSound;
+            tutorial1Source.Play();
+        }
+    }
+
+    public void StopTutorialSound()
+    {
+        if (tutorial1Source != null && tutorial1Source.isPlaying)
+        {
+            tutorial1Source.Stop();
         }
     }
 
@@ -135,7 +144,7 @@ public class AudioManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         sceneSwitch.SwitchTo(uiEnabled);
         PlayStage1Sound();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         PlayTutorialSound();
     }
 }
