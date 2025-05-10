@@ -172,12 +172,9 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Stage 2
-    public void PlayStage2Sound()
+    public void PlayStage2Sound(GameObject uiEnabled)
     {
-        if (stage2Source != null && stage2Sound != null)
-        {
-            stage2Source.PlayOneShot(stage2Sound);
-        }
+        StartCoroutine(PlaySoundStage2(uiEnabled));
 
         StartCoroutine(PlayNPC());
     }
@@ -270,6 +267,13 @@ public class AudioManager : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         PlayNPCSound();
+    }
+
+    IEnumerator PlaySoundStage2(GameObject uiEnabled)
+    {
+        yield return new WaitForSeconds(3);
+        sceneSwitch.SwitchTo(uiEnabled);
+        stage2Source.PlayOneShot(stage2Sound);
     }
     IEnumerator PlaySoundCharacter(GameObject uiEnabled)
     {
