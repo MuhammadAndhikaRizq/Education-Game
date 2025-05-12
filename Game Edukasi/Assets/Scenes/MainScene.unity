@@ -8075,6 +8075,12 @@ MonoBehaviour:
   stage4Source: {fileID: 599384747}
   boyAskSource: {fileID: 599384747}
   girlAskSource: {fileID: 599384747}
+  stage5Source: {fileID: 599384747}
+  stage5WinSource: {fileID: 599384747}
+  stage6Source: {fileID: 0}
+  stage7Source: {fileID: 0}
+  stage8Source: {fileID: 0}
+  stage9Source: {fileID: 0}
   defaultSound: {fileID: 8300000, guid: 7494517c1c904ae42840ee62b7a8dbc9, type: 3}
   eventSound: {fileID: 8300000, guid: dbfd16d4e0c8b6741a97fd535956f3ec, type: 3}
   characterSelectedSound: {fileID: 8300000, guid: 5376a3a4b8a6ba241acaabe6d6e266b3, type: 3}
@@ -8097,6 +8103,12 @@ MonoBehaviour:
   stage4Sound: {fileID: 8300000, guid: 1a0d775cd6bd3bf41a2c02a2760622c9, type: 3}
   boyAsk: {fileID: 8300000, guid: 89f675b3338b0ee43b01c1cbf21c9327, type: 3}
   girlAsk: {fileID: 8300000, guid: b2ccd8ff112608e4a94b697e0b039a17, type: 3}
+  stage5Sound: {fileID: 8300000, guid: 4ec2322e48499484e8cdfb0b5e35baeb, type: 3}
+  stage5Win: {fileID: 8300000, guid: 1fd71ef7d55d4d04ab0f55237a4b1db4, type: 3}
+  stage6Sound: {fileID: 0}
+  stage7Sound: {fileID: 0}
+  stage8Sound: {fileID: 0}
+  stage9Sound: {fileID: 0}
 --- !u!4 &599384745
 Transform:
   m_ObjectHideFlags: 0
@@ -28576,6 +28588,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WinLoseStage5, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

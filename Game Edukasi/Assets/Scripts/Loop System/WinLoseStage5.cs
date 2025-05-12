@@ -39,6 +39,7 @@ public class WinLoseStage5 : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         AudioManager.Instance.PlayEventSound();
+        AudioManager.Instance.PlayWinStage5Sound();
         winUI.SetActive(true);
     }
 

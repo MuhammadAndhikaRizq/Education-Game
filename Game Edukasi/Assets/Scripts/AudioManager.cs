@@ -39,6 +39,22 @@ public class AudioManager : MonoBehaviour
     public AudioSource stage4Source;
     public AudioSource boyAskSource;
     public AudioSource girlAskSource;
+    
+    [Header("Stage 5 Audio Sources")]
+    public AudioSource stage5Source;
+    public AudioSource stage5WinSource;
+
+    [Header("Stage 6 Audio Sources")]
+    public AudioSource stage6Source;
+
+    [Header("Stage 7 Audio Sources")]
+    public AudioSource stage7Source;
+
+    [Header("Stage 8 Audio Sources")]
+    public AudioSource stage8Source;
+
+    [Header("Stage 9 Audio Sources")]
+    public AudioSource stage9Source;
 
 
     [Header("Audio Clips")]
@@ -68,10 +84,27 @@ public class AudioManager : MonoBehaviour
     public AudioClip boyWinStage3Sound;
     public AudioClip girlWinStage3Sound;
 
-    [Header("Audio clips Stage 3")]
+    [Header("Audio clips Stage 4")]
     public AudioClip stage4Sound;
     public AudioClip boyAsk;
     public AudioClip girlAsk;
+
+    [Header("Audio Clips Stage 5")]
+    public AudioClip stage5Sound;
+    public AudioClip stage5Win;
+
+    [Header("Audio Clips Stage 6")]
+    public AudioClip stage6Sound;
+
+    [Header("Audio Clips Stage 7")]
+    public AudioClip stage7Sound;
+
+    [Header("Audio Clips Stage 8")]
+    public AudioClip stage8Sound;
+
+    [Header("Audio Clips Stage 9")]
+    public AudioClip stage9Sound;
+    
     
 
     private void Awake()
@@ -291,6 +324,26 @@ public class AudioManager : MonoBehaviour
         if(girlAskSource != null && girlAsk != null)
         {
             girlAskSource.PlayOneShot(girlAsk);
+        }
+    }
+
+    #endregion
+
+    #region Stage 5
+
+    public void PlayStage5Sound()
+    {
+        if(stage5Source != null && stage5Sound != null)
+        {
+            stage5Source.PlayOneShot(stage5Sound);
+        }
+    }
+
+    public void PlayWinStage5Sound()
+    {
+        if(stage5WinSource != null && stage5Win != null)
+        {
+            stage5WinSource.PlayOneShot(stage5Win);
         }
     }
 
