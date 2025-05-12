@@ -10,6 +10,14 @@ public class SkinManager : MonoBehaviour
     public List<Sprite> skins = new List<Sprite>();
     private int selectedSkin = 0;
     public GameObject playerSkin;
+    public GameObject winUI;
+    public GameObject loseUI;
+
+    [Header("Buttons")]
+    public GameObject nextButton;
+    public GameObject prevButton;
+    public GameObject chooseButton;
+
 
     public void NextOption()
     {
@@ -33,8 +41,26 @@ public class SkinManager : MonoBehaviour
         sr.sprite = skins[selectedSkin];
     }
 
-    public void PlayGame()
+    public void Pilih()
     {
-        PrefabUtility.SaveAsPrefabAsset(playerSkin, "Assets/PlayerSkin.prefab");
+        if(sr.sprite.name == "Unif-1")
+        {
+            winUI.SetActive(true);
+            playerSkin.SetActive(false);
+            nextButton.SetActive(false);
+            prevButton.SetActive(false);
+            chooseButton.SetActive(false);
+            AudioManager.Instance.PlayEventSound();
+            AudioManager.Instance.PlayWinStageMandiri();
+        }
+        else{
+            loseUI.SetActive(true);
+            playerSkin.SetActive(false);
+            nextButton.SetActive(false);
+            prevButton.SetActive(false);
+            chooseButton.SetActive(false);
+            AudioManager.Instance.PlayEventSound();
+            AudioManager.Instance.PlayWinStageMandiri();
+        }
     }
 }
