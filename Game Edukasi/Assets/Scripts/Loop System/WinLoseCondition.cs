@@ -6,6 +6,7 @@ public class WinLoseCondition : MonoBehaviour
 {
     [SerializeField] protected List<GameObject> items; // Daftar mainan yang harus masuk
     [SerializeField] protected GameObject winLoseUI;
+    [SerializeField] protected  GameObject stage;
     [SerializeField] protected string toysTag = "Toys";
     [SerializeField] protected string uiTag = "Win";
 
@@ -21,10 +22,21 @@ public class WinLoseCondition : MonoBehaviour
             {
                 if(winLoseUI.tag == uiTag)
                 {
-                    AudioManager.Instance.PlayWinStage1Sound();
-                    AudioManager.Instance.PlayEventSound();
+                    if(stage.name == "Stage_1")
+                    {
+                        AudioManager.Instance.PlayWinStage1Sound();
+                        AudioManager.Instance.PlayEventSound();
+
+                    }else if(stage.name == "Stage_7")  
+                    {
+                        AudioManager.Instance.PlayWinStage5Sound();
+                        AudioManager.Instance.PlayEventSound();
+                    }
                 }else{
-                    AudioManager.Instance.PlayLoseStage1Sound();
+                    if(stage.name == "Stage_1")
+                    {
+                        AudioManager.Instance.PlayLoseStage1Sound();
+                    }
                 }
                 
                 winLoseUI.SetActive(true);   
