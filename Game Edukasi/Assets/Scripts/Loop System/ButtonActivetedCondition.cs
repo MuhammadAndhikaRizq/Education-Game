@@ -121,9 +121,9 @@ public class ButtonActivetedCondition : MonoBehaviour
 
     }
 
-    public void ActivateWinUI4()
+    public void ActivateWinUI5()
     {
         spriteStage4.SetActive(false);
-        winUIStage4.SetActive(true);
+        winUIStage5.SetActive(true);
     }
 }

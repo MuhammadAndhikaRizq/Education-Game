@@ -6,46 +6,46 @@ public class WinLoseStage5 : MonoBehaviour
 {
     [SerializeField] private GameObject winUI;
     [SerializeField] private GameObject loseUI;
+    [SerializeField] private GameObject plane;
+    [SerializeField] private Transform target;
 
-    [SerializeField] private GameObject explode;
-    [SerializeField] private GameObject fire;
-    [SerializeField] private GameObject poison;
-    [SerializeField] private GameObject power;
-    [SerializeField] private string posionTag = "Poison";
-    [SerializeField] private string powerTag = "Power";
-
-    public void OnTriggerEnter2D(Collider2D other)
+    public void StartFlyPlane()
     {
-        if (other.CompareTag(powerTag))
-        {
-            poison.SetActive(false);
-            StartCoroutine(ActiveWinUI());
-            fire.SetActive(true);
-            power.SetActive(false);
-        }
-
-        if (other.CompareTag(posionTag))
-        {
-            power.SetActive(false);
-            StartCoroutine(ActiveLoseUI());
-            explode.SetActive(true);
-            poison.SetActive(false);
-        }
+        StartCoroutine(MoveSmoothly(plane.transform, target.position, 1f));
     }
 
-    IEnumerator ActiveWinUI()
+    public void TriggerWin()
+    {
+        StartCoroutine(ActiveWinUI());
+    }
+
+    private IEnumerator MoveSmoothly(Transform obj, Vector3 targetPos, float duration)
+    {
+        Vector3 startPos = obj.position;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            obj.position = Vector3.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
+
+        obj.position = targetPos;
+    }
+
+    private IEnumerator ActiveWinUI()
     {
         yield return new WaitForSeconds(2);
         AudioManager.Instance.PlayEventSound();
         winUI.SetActive(true);
-        fire.SetActive(false);
     }
 
-    IEnumerator ActiveLoseUI()
+    private IEnumerator ActiveLoseUI()
     {
         yield return new WaitForSeconds(2);
         loseUI.SetActive(true);
-        explode.SetActive(false);
     }
 
    
