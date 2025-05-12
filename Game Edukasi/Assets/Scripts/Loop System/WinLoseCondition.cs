@@ -29,13 +29,18 @@ public class WinLoseCondition : MonoBehaviour
 
                     }else if(stage.name == "Stage_7")  
                     {
-                        AudioManager.Instance.PlayWinStage5Sound();
+                        AudioManager.Instance.PlayWinStageMandiri();
                         AudioManager.Instance.PlayEventSound();
                     }
+
                 }else{
+
                     if(stage.name == "Stage_1")
                     {
                         AudioManager.Instance.PlayLoseStage1Sound();
+                    }else if(stage.name == "Stage_7")
+                    {
+                        AudioManager.Instance.PlayLoseStageMandiri();
                     }
                 }
                 

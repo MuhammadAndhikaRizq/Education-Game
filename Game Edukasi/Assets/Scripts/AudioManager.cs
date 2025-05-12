@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource eventSoundSource;
     public AudioSource winStage1SoundSource;
     public AudioSource loseStage1SoundSource;
+    public AudioSource winMandiriSource;
+    public AudioSource loseMandiriSource;
 
     [Header("Character Selection Audio Sources")]
     public AudioSource characterSelectedSource;
@@ -63,6 +65,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip characterSelectedSound;
     public AudioClip andhikaSound;
     public AudioClip jasminSound;
+    public AudioClip winMandiriSound;
+    public AudioClip loseMandiriSound;
     
     [Header("Audio Clips Stage 1")]
     public AudioClip stageSound;
@@ -344,6 +348,25 @@ public class AudioManager : MonoBehaviour
         if(stage5WinSource != null && stage5Win != null)
         {
             stage5WinSource.PlayOneShot(stage5Win);
+        }
+    }
+
+    #endregion
+
+    #region Stage Mandiri
+    public void PlayLoseStageMandiri()
+    {
+        if(loseMandiriSource != null && loseMandiriSound != null)
+        {
+            loseMandiriSource.PlayOneShot(loseMandiriSound);
+        }
+    }
+
+    public void PlayWinStageMandiri()
+    {
+        if(winMandiriSource != null && winMandiriSound != null)
+        {
+            winMandiriSource.PlayOneShot(winMandiriSound);
         }
     }
 

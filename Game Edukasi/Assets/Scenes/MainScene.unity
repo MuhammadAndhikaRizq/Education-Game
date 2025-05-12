@@ -1672,6 +1672,7 @@ MonoBehaviour:
   - {fileID: 1059107793}
   - {fileID: 1692627703}
   winLoseUI: {fileID: 985861029}
+  stage: {fileID: 0}
   toysTag: Toys
   uiTag: Win
 --- !u!61 &116618797
@@ -3896,6 +3897,7 @@ MonoBehaviour:
   - {fileID: 1059107793}
   - {fileID: 1692627703}
   winLoseUI: {fileID: 985861029}
+  stage: {fileID: 0}
   toysTag: Toys
   uiTag: Win
 --- !u!212 &340603092
@@ -7880,6 +7882,8 @@ MonoBehaviour:
   eventSoundSource: {fileID: 599384747}
   winStage1SoundSource: {fileID: 599384754}
   loseStage1SoundSource: {fileID: 599384753}
+  winMandiriSource: {fileID: 599384747}
+  loseMandiriSource: {fileID: 599384747}
   characterSelectedSource: {fileID: 599384747}
   andhikaSource: {fileID: 599384747}
   jasminSource: {fileID: 599384747}
@@ -7909,6 +7913,8 @@ MonoBehaviour:
   characterSelectedSound: {fileID: 8300000, guid: 5376a3a4b8a6ba241acaabe6d6e266b3, type: 3}
   andhikaSound: {fileID: 8300000, guid: 04e6fe8aa497c8c4d8da63611835e1dd, type: 3}
   jasminSound: {fileID: 8300000, guid: da100fea58cf6304a9ef48416da25cb0, type: 3}
+  winMandiriSound: {fileID: 8300000, guid: 281ebff716a11da4bbe1df85dc120e87, type: 3}
+  loseMandiriSound: {fileID: 8300000, guid: 7ba5604701cd7ba47be6e5c5fc7dca3c, type: 3}
   stageSound: {fileID: 8300000, guid: fa14f23ac3399fd44953dfe334f92663, type: 3}
   tutorialSound: {fileID: 8300000, guid: e6e05dd8461b8974582f8c7826ba6b56, type: 3}
   winStage1Sound: {fileID: 8300000, guid: 7f50889162f9007458beff154732e2d7, type: 3}
@@ -9785,6 +9791,7 @@ MonoBehaviour:
   - {fileID: 1059107793}
   - {fileID: 1692627703}
   winLoseUI: {fileID: 1152426723}
+  stage: {fileID: 0}
   toysTag: Toys
   uiTag: Win
 --- !u!1 &707895961
@@ -26680,6 +26687,7 @@ MonoBehaviour:
   items:
   - {fileID: 1267305810}
   winLoseUI: {fileID: 1869075373}
+  stage: {fileID: 476595617}
   toysTag: Toys
   uiTag: Win
 --- !u!61 &1955068850
@@ -29380,6 +29388,7 @@ MonoBehaviour:
   - {fileID: 1059107793}
   - {fileID: 1692627703}
   winLoseUI: {fileID: 1152426723}
+  stage: {fileID: 680489267}
   toysTag: Toys
   uiTag: Win
 --- !u!1 &2128935749
