@@ -35,6 +35,11 @@ public class AudioManager : MonoBehaviour
     public AudioSource boyWinStage3Source;
     public AudioSource girlWinStage3Source;
 
+    [Header("Stage 4 Audio Sources")]
+    public AudioSource stage4Source;
+    public AudioSource boyAskSource;
+    public AudioSource girlAskSource;
+
 
     [Header("Audio Clips")]
     public AudioClip defaultSound;
@@ -62,6 +67,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip teacherSound;
     public AudioClip boyWinStage3Sound;
     public AudioClip girlWinStage3Sound;
+
+    [Header("Audio clips Stage 3")]
+    public AudioClip stage4Sound;
+    public AudioClip boyAsk;
+    public AudioClip girlAsk;
     
 
     private void Awake()
@@ -258,6 +268,33 @@ public class AudioManager : MonoBehaviour
 
     #endregion
 
+    #region Stage 4
+
+    public void PlayStage4Sound()
+    {
+        if(stage4Source != null && stage4Sound != null)
+        {
+            stage4Source.PlayOneShot(stage4Sound);
+        }
+    }
+
+    public void PlayBoyAsk()
+    {
+        if(boyAskSource != null && boyAsk != null)
+        {
+            boyAskSource.PlayOneShot(boyAsk);
+        }
+    }
+
+    public void PlayGirlAsk()
+    {
+        if(girlAskSource != null && girlAsk != null)
+        {
+            girlAskSource.PlayOneShot(girlAsk);
+        }
+    }
+
+    #endregion
     IEnumerator Stage3Dialogue()
     {
         yield return new WaitForSeconds(6);

@@ -4,13 +4,16 @@ using UnityEngine;
 public class ButtonActivetedCondition : MonoBehaviour
 {
     public GameObject raiseHand;
+    public GameObject raiseHandStage4;
     public GameObject winUIStage3;
+    public GameObject winUIStage4;
     public SpriteRenderer spriteRenderer;
 
     public Transform target;
+    public Transform targetStage4;
     [Space]
     [Header("Stage 4")]
-    public GameObject winUIStage4;
+    public GameObject winUIStage5;
     public GameObject spriteStage4;
     public float speed = 5;
 
@@ -63,26 +66,58 @@ public class ButtonActivetedCondition : MonoBehaviour
         spriteStage4.SetActive(false);
     }
 
-    public void BuutonRaiseHand()
+    public void BuutonRaiseHand(GameObject stage)
     {
-        if(spriteRenderer.sprite.name == "1")
+        bool isBoy = spriteRenderer.sprite.name == "1";
+        // string currentStage = stage;
+
+        if (stage.name == "Stage_3")
         {
-            AudioManager.Instance.PlayBoyWinStage3();
-        }else{
-            AudioManager.Instance.PlayGirlWinStage3();
+            if (isBoy)
+                AudioManager.Instance.PlayBoyWinStage3();
+            else
+                AudioManager.Instance.PlayGirlWinStage3();
+
+            
+            raiseHand.transform.localPosition = Vector3.Lerp(raiseHand.transform.position, target.position, Time.deltaTime * speed);
+            StartCoroutine(ActiveWinUI3());
+            
+        }
+        else if (stage.name == "Stage_4")
+        {
+            if (isBoy)
+                AudioManager.Instance.PlayBoyAsk();
+            else
+                AudioManager.Instance.PlayGirlAsk();
+            
+        
+            raiseHandStage4.transform.localPosition = Vector3.Lerp(raiseHand.transform.position, targetStage4.position, Time.deltaTime * speed);
+
+
+            StartCoroutine(ActiveWinUI4());
         }
 
-        raiseHand.transform.localPosition = Vector3.Lerp(raiseHand.transform.position, target.position, Time.deltaTime * speed);
-        StartCoroutine(ActiveWinUI());
+        
+        
     }
 
-    public IEnumerator ActiveWinUI()
+    public IEnumerator ActiveWinUI3()
     {
         yield return new WaitForSeconds(1);
         AudioManager.Instance.PlayEventSound();
         AudioManager.Instance.PlayWinStage1Sound();
         raiseHand.SetActive(false);
         winUIStage3.SetActive(true);
+
+    }
+
+    public IEnumerator ActiveWinUI4()
+    {
+        yield return new WaitForSeconds(1);
+        AudioManager.Instance.PlayEventSound();
+        AudioManager.Instance.PlayWinStage1Sound();
+        raiseHandStage4.SetActive(false);
+        winUIStage4.SetActive(true);
 
     }
 

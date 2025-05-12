@@ -2295,7 +2295,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154560835}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5142,7 +5142,7 @@ GameObject:
   - component: {fileID: 441364416}
   - component: {fileID: 441364417}
   m_Layer: 5
-  m_Name: RaiseHand
+  m_Name: handStage4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6223,7 +6223,7 @@ GameObject:
   - component: {fileID: 501400869}
   - component: {fileID: 501400870}
   m_Layer: 5
-  m_Name: RaiseHand
+  m_Name: handStage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7480,13 +7480,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1398429539}
         m_TargetAssemblyTypeName: ButtonActivetedCondition, Assembly-CSharp
         m_MethodName: BuutonRaiseHand
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 154560835}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Stage_4
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7612110695385450425}
@@ -8072,6 +8072,9 @@ MonoBehaviour:
   teacherSource: {fileID: 599384747}
   boyWinStage3Source: {fileID: 599384747}
   girlWinStage3Source: {fileID: 599384747}
+  stage4Source: {fileID: 599384747}
+  boyAskSource: {fileID: 599384747}
+  girlAskSource: {fileID: 599384747}
   defaultSound: {fileID: 8300000, guid: 7494517c1c904ae42840ee62b7a8dbc9, type: 3}
   eventSound: {fileID: 8300000, guid: dbfd16d4e0c8b6741a97fd535956f3ec, type: 3}
   characterSelectedSound: {fileID: 8300000, guid: 5376a3a4b8a6ba241acaabe6d6e266b3, type: 3}
@@ -8091,6 +8094,9 @@ MonoBehaviour:
   teacherSound: {fileID: 8300000, guid: 15015528135ead24fb47c9290e787605, type: 3}
   boyWinStage3Sound: {fileID: 8300000, guid: 4ac2af82a3224c0418ce9587b6754464, type: 3}
   girlWinStage3Sound: {fileID: 8300000, guid: c0d27a6c0a190044bbf450075f0e21e5, type: 3}
+  stage4Sound: {fileID: 8300000, guid: 1a0d775cd6bd3bf41a2c02a2760622c9, type: 3}
+  boyAsk: {fileID: 8300000, guid: 89f675b3338b0ee43b01c1cbf21c9327, type: 3}
+  girlAsk: {fileID: 8300000, guid: b2ccd8ff112608e4a94b697e0b039a17, type: 3}
 --- !u!4 &599384745
 Transform:
   m_ObjectHideFlags: 0
@@ -10296,7 +10302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c1d9bf5423dde684bbac7b83ea5362cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7d0fce5e5a59b741966f06a2d559033, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11323,13 +11329,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1398429539}
         m_TargetAssemblyTypeName: ButtonActivetedCondition, Assembly-CSharp
         m_MethodName: BuutonRaiseHand
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1629438398}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Stage_3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &861230989
@@ -18666,10 +18672,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raiseHand: {fileID: 501400868}
+  raiseHandStage4: {fileID: 441364415}
   winUIStage3: {fileID: 1902730029}
+  winUIStage4: {fileID: 819014405}
   spriteRenderer: {fileID: 509779709}
   target: {fileID: 1378755872}
-  winUIStage4: {fileID: 81581826}
+  targetStage4: {fileID: 113116219}
+  winUIStage5: {fileID: 81581826}
   spriteStage4: {fileID: 1107937196}
   speed: 5
 --- !u!4 &1398429540
@@ -21629,8 +21638,20 @@ MonoBehaviour:
         m_MethodName: SwitchTo
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1480828188}
+          m_ObjectArgument: {fileID: 154560835}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 599384744}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayStage4Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -26411,18 +26432,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 105364336}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 599384744}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayStage2Sound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
