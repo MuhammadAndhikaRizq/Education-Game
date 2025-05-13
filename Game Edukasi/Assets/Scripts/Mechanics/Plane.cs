@@ -9,8 +9,9 @@ public class Plane : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
-            gameObject.SetActive(false); // this deactivates the plane itself
             winLoseHandler.TriggerWin(); // call method on other script
         }
     }
+
+    
 }

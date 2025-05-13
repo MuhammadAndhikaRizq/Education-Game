@@ -526,7 +526,7 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Stage 6-9
-     public void PlayStage6Sound()
+    public void PlayStage6Sound()
     {
         if(stage6Source != null && stage6Sound != null)
         {
@@ -543,14 +543,79 @@ public class AudioManager : MonoBehaviour
             stage6Source.Stop();
         }
     }
+
+    public void PlayStage7Sound()
+    {
+        if(stage7Source != null && stage7Sound != null)
+        {
+            stage7Source.clip = stage7Sound;
+            stage7Source.loop = false;
+            stage7Source.Play();
+        }
+    }
+
+    public void StopStage7Sound()
+    {
+        if (stage7Source != null && stage7Source.isPlaying)
+        {
+            stage7Source.Stop();
+        }
+    }
+
+    public void PlayStage8Sound()
+    {
+        if(stage8Source != null && stage8Sound != null)
+        {
+            stage8Source.clip = stage8Sound;
+            stage8Source.loop = false;
+            stage8Source.Play();
+        }
+    }
+
+    public void StopStage8Sound()
+    {
+        if (stage8Source != null && stage8Source.isPlaying)
+        {
+            stage8Source.Stop();
+        }
+    }
+
+    public void PlayStage9Sound()
+    {
+        if(stage9Source != null && stage9Sound != null)
+        {
+            stage9Source.clip = stage9Sound;
+            stage9Source.loop = false;
+            stage9Source.Play();
+        }
+    }
+
+    public void StopStage9Sound()
+    {
+        if (stage9Source != null && stage9Source.isPlaying)
+        {
+            stage9Source.Stop();
+        }
+    }
+
     #endregion
-    
+
     #region Stage Mandiri
     public void PlayLoseStageMandiri()
     {
         if(loseMandiriSource != null && loseMandiriSound != null)
         {
-            loseMandiriSource.PlayOneShot(loseMandiriSound);
+            loseMandiriSource.clip = loseMandiriSound;
+            loseMandiriSource.loop = false;
+            loseMandiriSource.Play();
+        }
+    }
+
+    public void StopLoseStageMandiri()
+    {
+        if (loseMandiriSource != null && loseMandiriSource.isPlaying)
+        {
+            loseMandiriSource.Stop();
         }
     }
 
@@ -558,7 +623,18 @@ public class AudioManager : MonoBehaviour
     {
         if(winMandiriSource != null && winMandiriSound != null)
         {
-            winMandiriSource.PlayOneShot(winMandiriSound);
+            winMandiriSource.clip = winMandiriSound;
+            winMandiriSource.loop = false;
+            winMandiriSource.Play();
+            
+        }
+    }
+
+    public void StopWinStageMandiri()
+    {
+        if (winMandiriSource != null && winMandiriSource.isPlaying)
+        {
+            winMandiriSource.Stop();
         }
     }
 

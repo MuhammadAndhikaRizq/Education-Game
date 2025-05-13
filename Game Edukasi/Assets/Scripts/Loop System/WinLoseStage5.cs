@@ -8,6 +8,12 @@ public class WinLoseStage5 : MonoBehaviour
     [SerializeField] private GameObject loseUI;
     [SerializeField] private GameObject plane;
     [SerializeField] private Transform target;
+    private Vector3 startPosition;
+
+    public void Start()
+    {
+        startPosition = plane.transform.position;
+    }
 
     public void StartFlyPlane()
     {
@@ -47,6 +53,11 @@ public class WinLoseStage5 : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         loseUI.SetActive(true);
+    }
+
+    public void ResetPlane()
+    {
+        plane.transform.position = startPosition;
     }
 
    
