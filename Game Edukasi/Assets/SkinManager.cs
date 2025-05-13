@@ -60,7 +60,7 @@ public class SkinManager : MonoBehaviour
             prevButton.SetActive(false);
             chooseButton.SetActive(false);
             AudioManager.Instance.PlayEventSound();
-            AudioManager.Instance.PlayWinStageMandiri();
+            AudioManager.Instance.PlayLoseStageMandiri();
         }
     }
 }
