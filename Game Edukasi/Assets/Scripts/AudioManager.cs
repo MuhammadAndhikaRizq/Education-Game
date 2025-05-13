@@ -391,7 +391,17 @@ public class AudioManager : MonoBehaviour
     {
         if(stage4Source != null && stage4Sound != null)
         {
-            stage4Source.PlayOneShot(stage4Sound);
+            stage4Source.clip = stage4Sound;
+            stage4Source.loop = false;  
+            stage4Source.Play();
+        }
+    }
+
+    public void StopStage4Sound()
+    {
+        if (stage4Source != null && stage4Source.isPlaying)
+        {
+            stage4Source.Stop();
         }
     }
 

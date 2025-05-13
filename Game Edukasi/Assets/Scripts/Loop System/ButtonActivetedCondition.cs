@@ -17,6 +17,14 @@ public class ButtonActivetedCondition : MonoBehaviour
     public GameObject spriteStage4;
     public float speed = 5;
 
+    private Vector3 startPositionStage3;
+    private Vector3 startPositionStage4;
+
+    public void Start()
+    {
+        startPositionStage3 = raiseHand.transform.position;
+        startPositionStage4 = raiseHandStage4.transform.position;
+    }
 
     public void ButtonActiveWin(GameObject gameObject)
     {
@@ -96,8 +104,6 @@ public class ButtonActivetedCondition : MonoBehaviour
 
             StartCoroutine(ActiveWinUI4());
         }
-
-        
         
     }
 
@@ -125,5 +131,11 @@ public class ButtonActivetedCondition : MonoBehaviour
     {
         spriteStage4.SetActive(false);
         winUIStage5.SetActive(true);
+    }
+
+    public void ResetObject()
+    {
+        raiseHand.transform.position = startPositionStage3;
+        raiseHandStage4.transform.position = startPositionStage4;
     }
 }

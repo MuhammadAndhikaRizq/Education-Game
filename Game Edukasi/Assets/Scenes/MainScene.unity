@@ -8007,6 +8007,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 599384744}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StopStage4Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &570601440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8749,8 +8761,8 @@ MonoBehaviour:
   boyWinStage3Source: {fileID: 599384754}
   girlWinStage3Source: {fileID: 599384754}
   stage4Source: {fileID: 599384746}
-  boyAskSource: {fileID: 599384746}
-  girlAskSource: {fileID: 599384746}
+  boyAskSource: {fileID: 599384754}
+  girlAskSource: {fileID: 599384754}
   stage5Source: {fileID: 599384746}
   stage5WinSource: {fileID: 599384746}
   stage6Source: {fileID: 0}
@@ -8777,7 +8789,7 @@ MonoBehaviour:
   teacherSound: {fileID: 8300000, guid: 15015528135ead24fb47c9290e787605, type: 3}
   boyWinStage3Sound: {fileID: 8300000, guid: 4ac2af82a3224c0418ce9587b6754464, type: 3}
   girlWinStage3Sound: {fileID: 8300000, guid: c0d27a6c0a190044bbf450075f0e21e5, type: 3}
-  stage4Sound: {fileID: 8300000, guid: 1a0d775cd6bd3bf41a2c02a2760622c9, type: 3}
+  stage4Sound: {fileID: 8300000, guid: 85901a1fb14131c40b2949bd27a58d9b, type: 3}
   boyAsk: {fileID: 8300000, guid: 89f675b3338b0ee43b01c1cbf21c9327, type: 3}
   girlAsk: {fileID: 8300000, guid: b2ccd8ff112608e4a94b697e0b039a17, type: 3}
   stage5Sound: {fileID: 8300000, guid: 4ec2322e48499484e8cdfb0b5e35baeb, type: 3}
@@ -13538,6 +13550,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 599384744}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StopStage4Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1006700884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15787,8 +15811,56 @@ MonoBehaviour:
         m_MethodName: SwitchTo
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 105364336}
+          m_ObjectArgument: {fileID: 1629438398}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 599384744}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StopStage4Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544926218}
+        m_TargetAssemblyTypeName: ResetManager, Assembly-CSharp
+        m_MethodName: NonActiveUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1902730029}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544926218}
+        m_TargetAssemblyTypeName: ResetManager, Assembly-CSharp
+        m_MethodName: ActiveUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 501400868}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1398429539}
+        m_TargetAssemblyTypeName: ButtonActivetedCondition, Assembly-CSharp
+        m_MethodName: ResetObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
