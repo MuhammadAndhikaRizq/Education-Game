@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public UI sceneSwitch;
 
+    #region Audio Sources
     [Header("Audio Sources")]
     public AudioSource backgroundMusicSource;
     public AudioSource eventSoundSource;
@@ -22,7 +23,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("Stage 1 Audio Sources")]
     public AudioSource stage1Source;
-    public AudioSource tutorial1Source;
     [Header("Stage 2 Audio Sources")]
     public AudioSource stage2Source;
     public AudioSource npcSource;
@@ -58,7 +58,9 @@ public class AudioManager : MonoBehaviour
     [Header("Stage 9 Audio Sources")]
     public AudioSource stage9Source;
 
+    #endregion
 
+    #region Audio Clips
     [Header("Audio Clips")]
     public AudioClip defaultSound;
     public AudioClip eventSound;
@@ -70,7 +72,6 @@ public class AudioManager : MonoBehaviour
     
     [Header("Audio Clips Stage 1")]
     public AudioClip stageSound;
-    public AudioClip tutorialSound;
     public AudioClip winStage1Sound;
     public AudioClip loseStage1Sound;
 
@@ -109,7 +110,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips Stage 9")]
     public AudioClip stage9Sound;
     
-    
+    #endregion
 
     private void Awake()
     {
@@ -178,26 +179,21 @@ public class AudioManager : MonoBehaviour
     #region Stage 1
     public void PlayStage1Sound()
     {
+
         if (stage1Source != null && stageSound != null)
         {
-            stage1Source.PlayOneShot(stageSound);
+            stage1Source.clip = stageSound;
+            stage1Source.loop = false;  
+            stage1Source.Play();
         }
     }
 
-    public void PlayTutorialSound()
+    public void StopStage1Sound()
     {
-        if (tutorial1Source != null && tutorialSound != null)
+        if (stage1Source != null && stage1Source.isPlaying)
         {
-            tutorial1Source.clip = tutorialSound;
-            tutorial1Source.Play();
-        }
-    }
-
-    public void StopTutorialSound()
-    {
-        if (tutorial1Source != null && tutorial1Source.isPlaying)
-        {
-            tutorial1Source.Stop();
+            stage1Source.Stop();
+            // isStoppedManually = true;
         }
     }
 
@@ -205,7 +201,17 @@ public class AudioManager : MonoBehaviour
     {
         if (winStage1SoundSource != null && winStage1Sound != null)
         {
-            winStage1SoundSource.PlayOneShot(winStage1Sound);
+            winStage1SoundSource.clip = winStage1Sound;
+            winStage1SoundSource.loop = false;  
+            winStage1SoundSource.Play();
+        }
+    }
+
+    public void StopWinStage1Sound()
+    {
+        if (winStage1SoundSource != null && winStage1SoundSource.isPlaying)
+        {
+            winStage1SoundSource.Stop();
         }
     }
 
@@ -213,26 +219,60 @@ public class AudioManager : MonoBehaviour
     {
         if (loseStage1SoundSource != null && loseStage1Sound != null)
         {
-            loseStage1SoundSource.PlayOneShot(loseStage1Sound);
+            loseStage1SoundSource.clip = loseStage1Sound;
+            loseStage1SoundSource.loop = false;  
+            loseStage1SoundSource.Play();
+        }
+    }
+
+    public void StopLoseStage1Sound()
+    {
+        if (loseStage1SoundSource != null && loseStage1SoundSource.isPlaying)
+        {
+            winStage1SoundSource.Stop();
         }
     }
     #endregion
 
     #region Stage 2
-    public void PlayStage2Sound(GameObject uiEnabled)
+    public void PlayStage2Sound()
     {
-        StartCoroutine(PlaySoundStage2(uiEnabled));
+        if(stage2Source != null && stage2Sound != null)
+        {
+            stage2Source.clip = stage2Sound;
+            stage2Source.loop = false;  
+            stage2Source.Play();
+        }
 
         StartCoroutine(PlayNPC());
+    }
+
+    public void StopStage2Sound()
+    {
+        if (stage2Source != null && stage2Source.isPlaying)
+        {
+            stage2Source.Stop();
+        }
     }
 
     public void PlayNPCSound()
     {
         if (npcSource != null && npcSound != null)
         {
-            npcSource.PlayOneShot(npcSound);
+            npcSource.clip = npcSound;
+            npcSource.loop = false;  
+            npcSource.Play();
         }
     }
+
+    public void StopNPCSound()
+    {
+        if (npcSource != null && npcSource.isPlaying)
+        {
+            npcSource.Stop();
+        }
+    }
+
 
     public void PlayBoyWinSound()
     {
@@ -382,18 +422,10 @@ public class AudioManager : MonoBehaviour
         PlayNPCSound();
     }
 
-    IEnumerator PlaySoundStage2(GameObject uiEnabled)
-    {
-        yield return new WaitForSeconds(3);
-        sceneSwitch.SwitchTo(uiEnabled);
-        stage2Source.PlayOneShot(stage2Sound);
-    }
     IEnumerator PlaySoundCharacter(GameObject uiEnabled)
     {
         yield return new WaitForSeconds(2);
         sceneSwitch.SwitchTo(uiEnabled);
         PlayStage1Sound();
-        yield return new WaitForSeconds(4);
-        PlayTutorialSound();
     }
 }
