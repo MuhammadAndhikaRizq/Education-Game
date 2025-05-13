@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
     public UI sceneSwitch;
-
+    private Coroutine npcCoroutine;
     #region Audio Sources
     [Header("Audio Sources")]
     public AudioSource backgroundMusicSource;
@@ -244,7 +245,10 @@ public class AudioManager : MonoBehaviour
             stage2Source.Play();
         }
 
-        StartCoroutine(PlayNPC());
+        if (npcCoroutine == null) // hanya mulai jika belum berjalan
+        {
+            npcCoroutine = StartCoroutine(PlayNPC());
+        }
     }
 
     public void StopStage2Sound()
@@ -252,6 +256,12 @@ public class AudioManager : MonoBehaviour
         if (stage2Source != null && stage2Source.isPlaying)
         {
             stage2Source.Stop();
+        }
+
+        if (npcCoroutine != null)
+        {
+            StopCoroutine(npcCoroutine);
+            npcCoroutine = null;
         }
     }
 
@@ -313,17 +323,47 @@ public class AudioManager : MonoBehaviour
     {
         if (stage3Source != null && stage3Sound != null)
         {
-            stage3Source.PlayOneShot(stage3Sound);
+            stage3Source.clip = stage3Sound;
+            stage3Source.loop = false;  
+            stage3Source.Play();
         }
 
-        StartCoroutine(Stage3Dialogue());
+        if (npcCoroutine == null) // hanya mulai jika belum berjalan
+        {
+            npcCoroutine = StartCoroutine(Stage3Dialogue());
+        }
+        
+    }
+
+    public void StopStage3Sound()
+    {
+        if (stage3Source != null && stage3Source.isPlaying)
+        {
+            stage3Source.Stop();
+        }
+
+        if (npcCoroutine != null)
+        {
+            StopCoroutine(npcCoroutine);
+            npcCoroutine = null;
+        }
     }
 
     public void PlayTeacherSound()
     {
         if (teacherSource != null && teacherSound != null)
         {
-            teacherSource.PlayOneShot(teacherSound);
+            teacherSource.clip = teacherSound;
+            teacherSource.loop = false;  
+            teacherSource.Play();
+        }
+    }
+
+     public void StopTeacherSound()
+    {
+        if (teacherSource != null && npcSource.isPlaying)
+        {
+            teacherSource.Stop();
         }
     }
 
