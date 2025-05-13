@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource loseStage1SoundSource;
     public AudioSource winMandiriSource;
     public AudioSource loseMandiriSource;
+    public AudioSource winBeranisource;
+    public AudioSource loseBeranisSource;
 
     [Header("Character Selection Audio Sources")]
     public AudioSource characterSelectedSource;
@@ -46,6 +48,8 @@ public class AudioManager : MonoBehaviour
     [Header("Stage 5 Audio Sources")]
     public AudioSource stage5Source;
     public AudioSource stage5WinSource;
+    public AudioSource boyTalkSource;
+    public AudioSource girlTalkSource;
 
     [Header("Stage 6 Audio Sources")]
     public AudioSource stage6Source;
@@ -98,6 +102,8 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips Stage 5")]
     public AudioClip stage5Sound;
     public AudioClip stage5Win;
+    public AudioClip boyTalk;
+    public AudioClip girlTalk;
 
     [Header("Audio Clips Stage 6")]
     public AudioClip stage6Sound;
@@ -110,6 +116,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Clips Stage 9")]
     public AudioClip stage9Sound;
+    public AudioClip stageBeraniwinSound;
+    public AudioClip stageBeranioseSound;
     
     #endregion
 
@@ -429,7 +437,17 @@ public class AudioManager : MonoBehaviour
     {
         if(stage5Source != null && stage5Sound != null)
         {
-            stage5Source.PlayOneShot(stage5Sound);
+            stage5Source.clip = stage5Sound;
+            stage5Source.loop = false;
+            stage5Source.Play();
+        }
+    }
+
+    public void StopStage5Sound()
+    {
+        if (stage5Source != null && stage5Source.isPlaying)
+        {
+            stage5Source.Stop();
         }
     }
 
@@ -437,12 +455,96 @@ public class AudioManager : MonoBehaviour
     {
         if(stage5WinSource != null && stage5Win != null)
         {
-            stage5WinSource.PlayOneShot(stage5Win);
+            stage5WinSource.clip = stage5Win;
+            stage5WinSource.loop = false;
+            stage5WinSource.Play();
+        }
+    }
+
+    public void StopWinStage5Sound()
+    {
+        if (stage5Source != null && stage5Source.isPlaying)
+        {
+            stage5Source.Stop();
+        }
+    }
+
+    public void PlayLoseBeraniSound()
+    {
+        if(loseBeranisSource != null && stageBeranioseSound != null)
+        {
+            loseBeranisSource.clip = stageBeranioseSound;
+            loseBeranisSource.loop = false;  
+            loseBeranisSource.Play();
+        }
+    }
+
+    public void StopLoseBeraniSound()
+    {
+        if (loseBeranisSource != null && loseBeranisSource.isPlaying)
+        {
+            loseBeranisSource.Stop();
+        }
+    }
+
+    public void PlayBoyTalk()
+    {
+        if(boyTalkSource != null && boyTalk != null)
+        {   
+            boyTalkSource.clip = boyTalk;
+            boyTalkSource.loop = false;
+            boyTalkSource.Play();
+        }
+    }
+
+    public void StopBoyTalk()
+    {
+        if (boyTalkSource != null && boyTalkSource.isPlaying)
+        {
+            boyTalkSource.Stop();
+        }
+    }
+
+    public void PlayGirlTalk()
+    {
+        if(girlTalkSource != null && girlTalk != null)
+        {   
+            girlTalkSource.clip = girlTalk;
+            girlTalkSource.loop = false;
+            girlTalkSource.Play();
+        }
+    }
+
+    public void StopGirlTalk()
+    {
+        if (girlTalkSource != null && girlTalkSource.isPlaying)
+        {
+            girlTalkSource.Stop();
         }
     }
 
     #endregion
 
+    #region Stage 6-9
+     public void PlayStage6Sound()
+    {
+        if(stage6Source != null && stage6Sound != null)
+        {
+            stage6Source.clip = stage6Sound;
+            stage6Source.loop = false;
+            stage6Source.Play();
+        }
+    }
+
+    public void StopStage6Sound()
+    {
+        if (stage6Source != null && stage6Source.isPlaying)
+        {
+            stage6Source.Stop();
+        }
+    }
+    #endregion
+    
     #region Stage Mandiri
     public void PlayLoseStageMandiri()
     {

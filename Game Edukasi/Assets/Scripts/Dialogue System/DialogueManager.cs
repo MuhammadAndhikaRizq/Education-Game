@@ -7,48 +7,63 @@ public class DialogueManager : MonoBehaviour
 {
     public TMP_Text dialogueText;
     public GameObject winUI;
+    public SpriteRenderer spriteRenderer;
     private Queue<string> sentences;
-    // Start is called before the first frame update
+
     void Start()
     {
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogueAuto()
     {
         sentences.Clear();
-        foreach(string sentence in dialogue.sentences)
+
+        // Tentukan isi dialog dan audio berdasarkan sprite
+        if (spriteRenderer.sprite.name == "1")
         {
-            sentences.Enqueue(sentence);
+            AudioManager.Instance.PlayBoyTalk();
+            sentences.Enqueue("Nama Saya Andhika.");
+            sentences.Enqueue("Ibu Saya Kireina.");
+            sentences.Enqueue("Ayah Saya Rizki.");
         }
-        DisplayNextSentence();
+        else
+        {
+            AudioManager.Instance.PlayGirlTalk();
+            sentences.Enqueue("Nama Saya Jasmien.");
+            sentences.Enqueue("Ibu Saya Nabila.");
+            sentences.Enqueue("Ayah Saya Raka.");
+        }
+
+        StartCoroutine(PlayDialogueSequence());
     }
 
-    public void DisplayNextSentence()
+    IEnumerator PlayDialogueSequence()
     {
-        if(sentences.Count == 0)
+        while (sentences.Count > 0)
         {
-            EndDialogue();
-            return;
+            string sentence = sentences.Dequeue();
+            yield return StartCoroutine(TypeSentence(sentence));
+            yield return new WaitForSeconds(1.5f); // jeda antar kalimat
         }
 
-        string sentence = sentences.Dequeue();
-        StartCoroutine(TypeSentence(sentence));
+        EndDialogue(); // otomatis di akhir
     }
 
-    IEnumerator TypeSentence (string sentence)
-	{
-		dialogueText.text = "";
-		foreach (char letter in sentence.ToCharArray())
-		{
-			dialogueText.text += letter;
-			yield return null;
-		}
-	}
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(0.03f); // kecepatan ketik
+        }
+    }
 
     public void EndDialogue()
     {
         AudioManager.Instance.PlayEventSound();
+        AudioManager.Instance.PlayWinStage5Sound();
         FindObjectOfType<ButtonActivetedCondition>().ActivateWinUI5();
     }
 

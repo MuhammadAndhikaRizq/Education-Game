@@ -47,7 +47,7 @@ public class ButtonActivetedCondition : MonoBehaviour
             AudioManager.Instance.PlayGirlLoseSound();
         }
         
-        StartCoroutine(NextStage(gameObject));
+        StartCoroutine(NextStage5(gameObject));
     }
 
     public void ButtonActiveLoseStage3(GameObject gameObject)
@@ -68,9 +68,24 @@ public class ButtonActivetedCondition : MonoBehaviour
         gameObject.SetActive(true);
 
     }
+
+    IEnumerator NextStage5(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(2);
+        if(gameObject.CompareTag("Win"))
+        {
+            AudioManager.Instance.PlayWinStage5Sound();
+            AudioManager.Instance.PlayEventSound();
+        }else{
+            AudioManager.Instance.PlayLoseBeraniSound();
+        }
+        gameObject.SetActive(true);
+
+    }
     public void ButtonActiveLoseStage4(GameObject gameObject)
     {
         gameObject.SetActive(true);
+        AudioManager.Instance.PlayLoseBeraniSound();
         spriteStage4.SetActive(false);
     }
 
@@ -121,7 +136,7 @@ public class ButtonActivetedCondition : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         AudioManager.Instance.PlayEventSound();
-        AudioManager.Instance.PlayWinStage1Sound();
+        AudioManager.Instance.PlayWinStage5Sound();
         raiseHandStage4.SetActive(false);
         winUIStage4.SetActive(true);
 
