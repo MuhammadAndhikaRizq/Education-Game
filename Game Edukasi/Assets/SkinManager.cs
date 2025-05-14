@@ -19,6 +19,13 @@ public class SkinManager : MonoBehaviour
     public GameObject chooseButton;
 
 
+    void Start()
+    {
+        if (skins.Count > 0)
+        {
+            sr.sprite = skins[selectedSkin];
+        }
+    }
     public void NextOption()
     {
         selectedSkin = selectedSkin + 1;
@@ -59,7 +66,6 @@ public class SkinManager : MonoBehaviour
             nextButton.SetActive(false);
             prevButton.SetActive(false);
             chooseButton.SetActive(false);
-            AudioManager.Instance.PlayEventSound();
             AudioManager.Instance.PlayLoseStageMandiri();
         }
     }

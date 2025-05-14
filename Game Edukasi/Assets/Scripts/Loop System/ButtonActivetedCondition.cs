@@ -38,6 +38,18 @@ public class ButtonActivetedCondition : MonoBehaviour
         StartCoroutine(NextStage(gameObject));
     }
 
+    public void ButtonActiveLoseStage2(GameObject gameObject)
+    {
+        if(spriteRenderer.sprite.name == "1")
+        {
+            AudioManager.Instance.PlayBoyLoseSound();
+        }else{
+            AudioManager.Instance.PlayGirlLoseSound();
+        }
+        
+        StartCoroutine(NextStage(gameObject));
+    }
+
     public void ButtonActiveLose(GameObject gameObject)
     {
         if(spriteRenderer.sprite.name == "1")

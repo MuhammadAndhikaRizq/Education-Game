@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource loseMandiriSource;
     public AudioSource winBeranisource;
     public AudioSource loseBeranisSource;
+    public AudioSource endGameSource;
 
     [Header("Character Selection Audio Sources")]
     public AudioSource characterSelectedSource;
@@ -74,6 +75,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip jasminSound;
     public AudioClip winMandiriSound;
     public AudioClip loseMandiriSound;
+    public AudioClip endGameSound;
     
     [Header("Audio Clips Stage 1")]
     public AudioClip stageSound;
@@ -638,6 +640,24 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayEndGame()
+    {
+        if(endGameSource != null && endGameSound != null)
+        {
+            endGameSource.clip = endGameSound;
+            endGameSource.loop = false;
+            endGameSource.Play();
+            
+        }
+    }
+
+    public void StopEndGame()
+    {
+        if (endGameSource != null && endGameSource.isPlaying)
+        {
+            endGameSource.Stop();
+        }
+    }
     #endregion
     IEnumerator Stage3Dialogue()
     {

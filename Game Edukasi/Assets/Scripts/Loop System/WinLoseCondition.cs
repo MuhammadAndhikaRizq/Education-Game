@@ -50,6 +50,7 @@ public class WinLoseCondition : MonoBehaviour
             }
             else if (stage.name == "Stage_7")
             {
+                AudioManager.Instance.StopStage7Sound();
                 AudioManager.Instance.PlayLoseStageMandiri();
             }
         }
