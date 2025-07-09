@@ -24,11 +24,11 @@ public class DragAndDrop : MonoBehaviour
 
     protected virtual void InputSystem()
     {
-        if (Input.GetMouseButtonDown(0)) // Mouse Click (PC)
+        if (Input.GetMouseButtonDown(0)) 
         {
             CheckTouchOrClick(Input.mousePosition);
         }
-        else if (Input.touchCount > 0) // Touch Input (Android)
+        else if (Input.touchCount > 0) 
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)

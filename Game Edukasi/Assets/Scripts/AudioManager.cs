@@ -672,6 +672,6 @@ public class AudioManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         sceneSwitch.SwitchTo(uiEnabled);
-        PlayStage1Sound();
+        PlayStage2Sound();
     }
 }
