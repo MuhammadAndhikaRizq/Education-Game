@@ -31,7 +31,7 @@ public class WinLoseCondition : MonoBehaviour
     {
         if (winLoseUI.tag == uiTag)
         {
-            if (stage.name == "Stage_1")
+            if (stage.name == "Stage_2")
             {
                 AudioManager.Instance.PlayWinStage1Sound();
                 AudioManager.Instance.PlayEventSound();
@@ -44,7 +44,7 @@ public class WinLoseCondition : MonoBehaviour
         }
         else
         {
-            if (stage.name == "Stage_1")
+            if (stage.name == "Stage_2")
             {
                 AudioManager.Instance.PlayLoseStage1Sound();
             }
