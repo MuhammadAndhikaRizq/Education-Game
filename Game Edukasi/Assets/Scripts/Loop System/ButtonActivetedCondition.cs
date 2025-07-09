@@ -97,7 +97,6 @@ public class ButtonActivetedCondition : MonoBehaviour
     public void ButtonActiveLoseStage4(GameObject gameObject)
     {
         gameObject.SetActive(true);
-        AudioManager.Instance.PlayLoseBeraniSound();
         spriteStage4.SetActive(false);
     }
 
